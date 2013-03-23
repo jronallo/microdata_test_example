@@ -10,6 +10,7 @@ gem 'sqlite3'
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'microdata'
 end
 
 # Gems used only for assets and not required
