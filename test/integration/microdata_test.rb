@@ -18,4 +18,12 @@ class MicrodataTest < ActionDispatch::IntegrationTest
     assert_equal ['Associate Head of Digital Library Initiatives'], person.properties['jobTitle']
   end
 
+  test "the Person's affiliation" do 
+    affiliation = @items.first.properties['affiliation'].first
+    assert affiliation
+    assert_equal ['http://schema.org/Library'], affiliation.type
+    assert_equal ['NCSU Libraries'], affiliation.properties['name']
+    assert_equal ['http://lib.ncsu.edu'], affiliation.properties['url']
+  end
+
 end
